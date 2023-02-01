@@ -1,0 +1,70 @@
+#1
+#1F1D36 - main text color
+#3F3351 - secondary text color
+#FFFCFF - main background color
+#247BA0 - buttons color
+#C3B299 - GUI color
+
+#2
+#9D8189 - main text color
+#F4ACB7 - secondary text color
+#FFEBEE - main background color
+#D8E2DC - buttons color
+#FFE5D9 - GUI color
+
+
+collage grid table 8*5
+img1 - (0-1;0-3)
+img2 - (1-2;0-2)
+img3 - (0-1;3-5)
+img4 - (1-2;2-5)
+img5 - (0-2;5-8)
+img6 - (2-5;0-5)
+img7 - (2-3;5-8)
+img8 - (3-5;5-8)
+
+
+&__item1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    &__item2 {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    &__item3 {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    &__item4 {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+
+    &__item5 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    &__item6 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 60vh);
