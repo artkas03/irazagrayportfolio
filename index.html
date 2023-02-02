@@ -12,21 +12,26 @@
         <link rel="stylesheet" href="./style/style.css" />
         <title>IRAZAGRAY</title>
     </head>
-    <body>
-        <header class="header">
-            <nav class="header__navigation">
+    <body onload="getBlockPosotions()" onresize="getBlockPosotions()">
+        <header class="header block">
+            <nav class="header__navigation" id="siteNavigation">
                 <div class="header__navbuttons">
-                    <a href="#" class="header__navbutton">К началу</a>
-                    <a href="#" class="header__navbutton">Обо мне</a>
-                    <a href="#" class="header__navbutton">Портфолио</a>
-                    <a href="#" class="header__navbutton">Жанры</a>
-                    <a href="#" class="header__navbutton">Прайс</a>
-                    <a href="#" class="header__navbutton">Укр|Рус</a>
+                    <a class="header__navbutton" id="scrollToBlockBtn"
+                        >К началу</a
+                    >
+                    <a class="header__navbutton" id="scrollToBlockBtn"
+                        >Обо мне</a
+                    >
+                    <a class="header__navbutton" id="scrollToBlockBtn"
+                        >Портфолио</a
+                    >
+                    <a class="header__navbutton" id="scrollToBlockBtn">Прайс</a>
+                    <a class="header__navbutton">Укр|Рус</a>
                 </div>
             </nav>
             <div class="header__image"></div>
         </header>
-        <div class="aboutme">
+        <div class="aboutme block">
             <div class="aboutme__content">
                 <div class="aboutme__text">
                     <h3 class="aboutme__maintext">Обо мне</h3>
@@ -62,7 +67,7 @@
                 <div class="collage__item9"></div>
             </div>
         </div>
-        <div class="portfolio">
+        <div class="portfolio block">
             <div class="portfolio__title"><h3>Портфолио</h3></div>
             <div class="portfolio__nav">
                 <div class="portfolio__navbuttons">
@@ -313,7 +318,7 @@
                 <img src="./img/headerphoto1.webp" alt="" />
             </div>
         </div>
-        <div class="price">
+        <div class="price block">
             <div class="price__content">
                 <h3 class="price__title">Прайс</h3>
                 <div class="price__cards">

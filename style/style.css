@@ -89,6 +89,7 @@ body {
   color: #1f1d36;
   padding: 4px;
   transition: all 0.8s ease;
+  cursor: pointer;
 }
 .header__navbutton:hover {
   color: #fffcff;
@@ -101,6 +102,11 @@ body {
   background-image: url(../img/logo.webp);
   background-position: center;
   height: 700px;
+}
+@media screen and (min-width: 1601px) {
+  .header__navbuttons {
+    font-size: 30px;
+  }
 }
 
 .aboutme__content {
@@ -137,6 +143,25 @@ body {
 }
 .aboutme__image img {
   max-height: 50vh;
+}
+@media screen and (min-width: 1601px) {
+  .aboutme__content {
+    gap: 60px;
+  }
+  .aboutme__text {
+    padding-left: 40px;
+    gap: 20px;
+  }
+  .aboutme__maintext {
+    font-size: 50px;
+  }
+  .aboutme__subtext {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+  .aboutme__image img {
+    max-height: 400px;
+  }
 }
 
 .collage {
@@ -391,6 +416,41 @@ body {
   top: 50%;
   transform: translateX(60%) translateY(-50%);
 }
+@media screen and (min-width: 1575px) {
+  .portfolio__title h3 {
+    font-size: 40px;
+    padding-left: 10px;
+  }
+  .portfolio__nav {
+    margin-top: 30px;
+  }
+  .portfolio__navbuttons {
+    padding: 20px 0;
+  }
+  .portfolio__button {
+    font-size: 30px;
+  }
+  .portfolio__gallery {
+    padding: 15px 30px;
+  }
+  .portfolio__contaier {
+    height: 550px;
+  }
+  .portfolio__item {
+    max-height: 550px;
+  }
+  .portfolio .activeganre {
+    gap: 30px;
+  }
+  .portfolio__prev, .portfolio__next {
+    height: 80px;
+    width: 50px;
+  }
+  .portfolio__next {
+    transform: translateY(-50%);
+    right: 30px;
+  }
+}
 
 .video__item {
   max-height: 100vh;
@@ -412,6 +472,11 @@ body {
   font-size: 4vw;
   width: 80%;
   color: white;
+}
+@media screen and (min-width: 1575px) {
+  .video__item {
+    max-height: 780px;
+  }
 }
 
 .price__content {
@@ -437,6 +502,7 @@ body {
 }
 .price__card {
   display: flex;
+  justify-content: space-between;
 }
 .price__card:nth-child(2n) {
   flex-direction: row-reverse;
@@ -456,12 +522,12 @@ body {
   border-radius: 1vw 0 0 1vw;
 }
 .price__cardcontent {
-  max-width: 70%;
+  max-width: 72%;
   display: flex;
   flex-direction: column;
   background-color: rgba(128, 128, 128, 0.08);
   border-radius: 0 1vw 1vw 0;
-  padding: 2vh;
+  padding: 2.5vh;
 }
 .price__subtitle {
   font-family: "Cormorant Garamond", serif;
@@ -510,6 +576,38 @@ body {
   letter-spacing: 0.08em;
   font-size: 1.5vw;
 }
+@media screen and (min-width: 1575px) {
+  .price__title {
+    font-size: 50px;
+    padding-bottom: 20px;
+  }
+  .price__cards {
+    gap: 70px;
+    margin-top: 80px;
+  }
+  .price__cardcontent {
+    padding: 20px;
+  }
+  .price__subtitle {
+    font-size: 35px;
+    padding-bottom: 20px;
+  }
+  .price__subtext {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .price__footer {
+    gap: 20px;
+  }
+  .price__button {
+    font-size: 24px;
+    padding: 10px 18px;
+  }
+  .price__price {
+    letter-spacing: 2px;
+    font-size: 24px;
+  }
+}
 
 .footer {
   background-color: #eae1df;
@@ -550,6 +648,14 @@ body {
   cursor: pointer;
   gap: 0.5vw;
   transition: all 0.3s ease;
+  padding: 0.5vh;
+  border-radius: 5px;
+}
+.footer__button:hover {
+  transition: all 0.3s ease;
+  background-color: #fffcff;
+  transform: translate(-5%);
+  box-shadow: 2px 2px 3px #1f1d36;
 }
 .footer__accountname {
   font-family: "Bitter", serif;

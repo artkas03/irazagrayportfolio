@@ -1,9 +1,37 @@
+const navigationButtons = document.querySelectorAll("#scrollToBlockBtn");
+
 const [galleryButtonPrev, galleryButtonNext] =
     document.querySelectorAll("#galleryMoveButton");
 
 const containerOfGanres = document.querySelectorAll("#containerOfGanres");
 const arrayOfGanres = document.querySelectorAll("#galleryGanre");
 const arrayOfGanredButtons = document.querySelectorAll("#galleryGanreButton");
+
+const heightBlockPosition = [];
+
+function getBlockPosotions() {
+    document.querySelectorAll(".block").forEach((block, index) => {
+        if (block.offsetTop !== 0) {
+            heightBlockPosition[index] =
+                block.offsetTop -
+                document.querySelector("#siteNavigation").clientHeight;
+        } else {
+            heightBlockPosition[index] = 0;
+        }
+    });
+}
+
+navigationButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+        window.scrollTo({
+            top: heightBlockPosition[index],
+            left: 0,
+            behavior: "smooth",
+        });
+    });
+});
+
+console.log(document.querySelector("body"));
 
 arrayOfGanredButtons.forEach((button, index = 0) => {
     button.addEventListener("click", () => {
@@ -18,7 +46,7 @@ arrayOfGanredButtons.forEach((button, index = 0) => {
         });
 
         arrayOfGanres[index].classList.add("activeganre");
-        containerOfGanres[index].scrollTo({
+        containerOfGanres[0].scrollTo({
             top: 0,
             left: 0,
             behavior: "smooth",
@@ -28,7 +56,7 @@ arrayOfGanredButtons.forEach((button, index = 0) => {
 
 [galleryButtonPrev, galleryButtonNext].forEach((button) => {
     button.addEventListener("click", () => {
-        arrayOfGanres.forEach((ganre) => {
+        arrayOfGanres.forEach((ganre, index) => {
             if (ganre.classList.contains("activeganre")) {
                 let distanceToMove =
                     ganre.children[1].offsetLeft - ganre.children[0].offsetLeft;
