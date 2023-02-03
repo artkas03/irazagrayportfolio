@@ -7,6 +7,8 @@ const containerOfGanres = document.querySelectorAll("#containerOfGanres");
 const arrayOfGanres = document.querySelectorAll("#galleryGanre");
 const arrayOfGanredButtons = document.querySelectorAll("#galleryGanreButton");
 
+const orderButtons = document.querySelectorAll(".orderbutton");
+
 const heightBlockPosition = [];
 
 function getBlockPosotions() {
@@ -21,6 +23,12 @@ function getBlockPosotions() {
     });
 }
 
+orderButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        console.log(button);
+    });
+});
+
 navigationButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
         window.scrollTo({
@@ -30,8 +38,6 @@ navigationButtons.forEach((button, index) => {
         });
     });
 });
-
-console.log(document.querySelector("body"));
 
 arrayOfGanredButtons.forEach((button, index = 0) => {
     button.addEventListener("click", () => {

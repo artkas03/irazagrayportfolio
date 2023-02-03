@@ -60,7 +60,17 @@ body {
   background-color: #fffcff;
   display: flex;
   flex-direction: column;
-  gap: 88px;
+  gap: 15vh;
+}
+@media screen and (max-width: 1276px) {
+  body {
+    gap: 12vh;
+  }
+}
+@media screen and (max-width: 1024px) {
+  body {
+    gap: 9vh;
+  }
 }
 
 .header {
@@ -99,13 +109,50 @@ body {
 .header__image {
   margin-left: 50%;
   transform: translateX(-50%);
-  background-image: url(../img/logo.webp);
-  background-position: center;
-  height: 700px;
+  background: url(../img/logo.webp) no-repeat;
+  background-position: 50% 50%;
+  height: 45vw;
 }
 @media screen and (min-width: 1601px) {
   .header__navbuttons {
     font-size: 30px;
+  }
+}
+@media screen and (max-width: 1276px) {
+  .header__navbuttons {
+    padding: 0 5vw;
+    font-size: 2vw;
+  }
+  .header__image {
+    background-size: 60vw;
+    height: 40vw;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .header__navbuttons {
+    font-size: 2.4vw;
+  }
+  .header__image {
+    height: 45vw;
+    background-position: 50% 60%;
+  }
+}
+@media screen and (max-width: 766px) {
+  .header__navbuttons {
+    font-size: 2.8vw;
+  }
+  .header__image {
+    height: 45vw;
+    background-position: 50% 70%;
+  }
+}
+@media screen and (max-width: 651px) {
+  .header__navigation {
+    display: none;
+  }
+  .header__image {
+    height: 40vw;
+    background-position: 50% 40%;
   }
 }
 
@@ -122,7 +169,7 @@ body {
   padding-left: 2em;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 3vw;
   max-width: 50%;
 }
 .aboutme__maintext {
@@ -134,7 +181,7 @@ body {
   font-size: 1vw;
   font-family: "Bitter", serif;
   color: #3f3351;
-  line-height: 35px;
+  line-height: 30px;
   letter-spacing: 0.08em;
 }
 .aboutme__image {
@@ -161,6 +208,56 @@ body {
   }
   .aboutme__image img {
     max-height: 400px;
+  }
+}
+@media screen and (min-width: 1307px) {
+  .aboutme__image img {
+    max-height: 370px;
+  }
+}
+@media screen and (max-width: 1276px) {
+  .aboutme__text {
+    padding-left: 3vw;
+    gap: 2vw;
+  }
+  .aboutme__maintext {
+    font-size: 3vw;
+  }
+  .aboutme__subtext {
+    font-size: 1.15vw;
+    line-height: 28px;
+  }
+  .aboutme__image img {
+    max-height: 50vh;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .aboutme__text {
+    padding-left: 3vw;
+    gap: 2vw;
+  }
+  .aboutme__maintext {
+    font-size: 3vw;
+  }
+  .aboutme__subtext {
+    font-size: 1.35vw;
+    line-height: 25px;
+  }
+}
+@media screen and (max-width: 766px) {
+  .aboutme__text {
+    padding-left: 4vw;
+  }
+  .aboutme__maintext {
+    font-size: 4vw;
+  }
+  .aboutme__subtext {
+    font-size: 1.55vw;
+    line-height: 22px;
+    letter-spacing: 0.08em;
+  }
+  .aboutme__image img {
+    max-height: 52vh;
   }
 }
 
@@ -256,6 +353,21 @@ body {
   grid-column-end: 6;
   grid-row-start: 5;
   grid-row-end: 9;
+}
+@media screen and (max-width: 1276px) {
+  .collage__grid {
+    grid-template-rows: repeat(8, 18vh);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .collage__grid {
+    grid-template-rows: repeat(8, 15vh);
+  }
+}
+@media screen and (max-width: 768px) {
+  .collage__grid {
+    grid-template-rows: repeat(8, 12vh);
+  }
 }
 
 .portfolio {
@@ -451,6 +563,36 @@ body {
     right: 30px;
   }
 }
+@media screen and (max-width: 1276px) {
+  .portfolio__title h3 {
+    font-size: 2.5vw;
+  }
+  .portfolio__nav {
+    padding: 1.25vh 5vw;
+  }
+  .portfolio__button {
+    font-size: 2.4vw;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .portfolio__title h3 {
+    font-size: 4vw;
+  }
+  .portfolio__button {
+    font-size: 2.8vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .portfolio__title h3 {
+    font-size: 3.75vw;
+  }
+}
+@media screen and (max-width: 651px) {
+  .portfolio__prev, .portfolio__next {
+    height: 50px;
+    width: 35px;
+  }
+}
 
 .video__item {
   max-height: 100vh;
@@ -476,6 +618,21 @@ body {
 @media screen and (min-width: 1575px) {
   .video__item {
     max-height: 780px;
+  }
+}
+@media screen and (max-width: 1276px) {
+  .video__item {
+    max-height: 80vh;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .video__item {
+    max-height: 70vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .video__item {
+    max-height: 60vh;
   }
 }
 
@@ -535,12 +692,13 @@ body {
   padding-bottom: 2vh;
 }
 .price__subtext {
-  font-size: 1vw;
+  font-size: 1.1vw;
   font-family: "Bitter", serif;
   line-height: 32px;
   letter-spacing: 0.08em;
   color: #3f3351;
   height: 100%;
+  overflow: scroll;
 }
 .price__footer {
   display: flex;
@@ -608,6 +766,58 @@ body {
     font-size: 24px;
   }
 }
+@media screen and (max-width: 1276px) {
+  .price__content {
+    padding: 0 3vw;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .price__title {
+    font-size: 4vw;
+  }
+  .price__subtitle {
+    font-size: 2.4vw;
+  }
+  .price__subtext {
+    font-size: 1.2vw;
+    line-height: 30px;
+  }
+  .price__price {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 938px) {
+  .price__subtext {
+    font-size: 1.3vw;
+    line-height: 26px;
+  }
+  .price__button {
+    font-size: 1.2em;
+    padding: 1vh 1.2vw;
+  }
+  .price__price {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .price__title {
+    font-size: 4.5vw;
+  }
+  .price__subtitle {
+    font-size: 3vw;
+  }
+  .price__subtext {
+    font-size: 1.5vw;
+    line-height: 20px;
+  }
+  .price__button {
+    font-size: 0.9em;
+    padding: 0.5vh 2vw;
+  }
+  .price__price {
+    font-size: 16px;
+  }
+}
 
 .footer {
   background-color: #eae1df;
@@ -663,4 +873,14 @@ body {
 }
 .footer__socialmedia svg path {
   fill: #1f1d36;
+}
+@media screen and (max-width: 1276px) {
+  .footer__content {
+    padding: 2vh 5vw;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .footer__button {
+    gap: 1.2vw;
+  }
 }/*# sourceMappingURL=style.css.map */

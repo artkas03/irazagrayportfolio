@@ -53,7 +53,7 @@ $mainTextFont: "Cormorant Garamond", serif;
 $mainTextColor: #1f1d36;
 $subTextFont: "Bitter", serif;
 $subtextColor: #3f3351;
-$blockGap: 88px;
+$blockGap: 15vh;
 
 body {
     margin: 0 auto;
@@ -66,6 +66,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: $blockGap;
+
+    @media screen and (max-width: 1276px) {
+        gap: 12vh;
+    }
+
+    @media screen and (max-width: 1024px) {
+        gap: 9vh;
+    }
 }
 
 .header {
@@ -109,14 +117,59 @@ body {
     &__image {
         margin-left: 50%;
         transform: translateX(-50%);
-        background-image: url(../img/logo.webp);
-        background-position: center;
-        height: 700px;
+        background: url(../img/logo.webp) no-repeat;
+        background-position: 50% 50%;
+        height: 45vw;
     }
 
     @media screen and (min-width: 1601px) {
         &__navbuttons {
             font-size: 30px;
+        }
+    }
+
+    @media screen and (max-width: 1276px) {
+        &__navbuttons {
+            padding: 0 5vw;
+            font-size: 2vw;
+        }
+
+        &__image {
+            background-size: 60vw;
+            height: 40vw;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        &__navbuttons {
+            font-size: 2.4vw;
+        }
+
+        &__image {
+            height: 45vw;
+            background-position: 50% 60%;
+        }
+    }
+
+    @media screen and (max-width: 766px) {
+        &__navbuttons {
+            font-size: 2.8vw;
+        }
+
+        &__image {
+            height: 45vw;
+            background-position: 50% 70%;
+        }
+    }
+
+    @media screen and (max-width: 651px) {
+        &__navigation {
+            display: none;
+        }
+
+        &__image {
+            height: 40vw;
+            background-position: 50% 40%;
         }
     }
 }
@@ -136,7 +189,7 @@ body {
         padding-left: 2em;
         display: flex;
         flex-direction: column;
-        gap: 1em;
+        gap: 3vw;
         max-width: 50%;
     }
 
@@ -150,7 +203,7 @@ body {
         font-size: 1vw;
         font-family: $subTextFont;
         color: $subtextColor;
-        line-height: 35px;
+        line-height: 30px;
         letter-spacing: 0.08em;
     }
 
@@ -184,6 +237,74 @@ body {
         &__image {
             img {
                 max-height: 400px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1307px) {
+        &__image {
+            img {
+                max-height: 370px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1276px) {
+        &__text {
+            padding-left: 3vw;
+            gap: 2vw;
+        }
+
+        &__maintext {
+            font-size: 3vw;
+        }
+
+        &__subtext {
+            font-size: 1.15vw;
+            line-height: 28px;
+        }
+
+        &__image {
+            img {
+                max-height: 50vh;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        &__text {
+            padding-left: 3vw;
+            gap: 2vw;
+        }
+
+        &__maintext {
+            font-size: 3vw;
+        }
+
+        &__subtext {
+            font-size: 1.35vw;
+            line-height: 25px;
+        }
+    }
+
+    @media screen and (max-width: 766px) {
+        &__text {
+            padding-left: 4vw;
+        }
+
+        &__maintext {
+            font-size: 4vw;
+        }
+
+        &__subtext {
+            font-size: 1.55vw;
+            line-height: 22px;
+            letter-spacing: 0.08em;
+        }
+
+        &__image {
+            img {
+                max-height: 52vh;
             }
         }
     }
@@ -290,6 +411,24 @@ body {
         grid-column-end: 6;
         grid-row-start: 5;
         grid-row-end: 9;
+    }
+
+    @media screen and (max-width: 1276px) {
+        &__grid {
+            grid-template-rows: repeat(8, 18vh);
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        &__grid {
+            grid-template-rows: repeat(8, 15vh);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        &__grid {
+            grid-template-rows: repeat(8, 12vh);
+        }
     }
 }
 
@@ -504,6 +643,50 @@ body {
             right: 30px;
         }
     }
+
+    @media screen and (max-width: 1276px) {
+        &__title {
+            h3 {
+                font-size: 2.5vw;
+            }
+        }
+
+        &__nav {
+            padding: 1.25vh 5vw;
+        }
+
+        &__button {
+            font-size: 2.4vw;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        &__title {
+            h3 {
+                font-size: 4vw;
+            }
+        }
+
+        &__button {
+            font-size: 2.8vw;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        &__title {
+            h3 {
+                font-size: 3.75vw;
+            }
+        }
+    }
+
+    @media screen and (max-width: 651px) {
+        &__prev,
+        &__next {
+            height: 50px;
+            width: 35px;
+        }
+    }
 }
 
 .video {
@@ -533,6 +716,24 @@ body {
     @media screen and (min-width: 1575px) {
         &__item {
             max-height: 780px;
+        }
+    }
+
+    @media screen and (max-width: 1276px) {
+        &__item {
+            max-height: 80vh;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        &__item {
+            max-height: 70vh;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        &__item {
+            max-height: 60vh;
         }
     }
 }
@@ -603,12 +804,13 @@ body {
     }
 
     &__subtext {
-        font-size: 1vw;
+        font-size: 1.1vw;
         font-family: $subTextFont;
         line-height: 32px;
         letter-spacing: 0.08em;
         color: #3f3351;
         height: 100%;
+        overflow: scroll;
     }
 
     &__footer {
@@ -689,6 +891,71 @@ body {
             font-size: 24px;
         }
     }
+
+    @media screen and (max-width: 1276px) {
+        &__content {
+            padding: 0 3vw;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        &__title {
+            font-size: 4vw;
+        }
+
+        &__subtitle {
+            font-size: 2.4vw;
+        }
+
+        &__subtext {
+            font-size: 1.2vw;
+            line-height: 30px;
+        }
+
+        &__price {
+            font-size: 20px;
+        }
+    }
+
+    @media screen and (max-width: 938px) {
+        &__subtext {
+            font-size: 1.3vw;
+            line-height: 26px;
+        }
+
+        &__button {
+            font-size: 1.2em;
+            padding: 1vh 1.2vw;
+        }
+
+        &__price {
+            font-size: 18px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        &__title {
+            font-size: 4.5vw;
+        }
+
+        &__subtitle {
+            font-size: 3vw;
+        }
+
+        &__subtext {
+            font-size: 1.5vw;
+            line-height: 20px;
+        }
+
+        &__button {
+            font-size: 0.9em;
+            padding: 0.5vh 2vw;
+        }
+
+        &__price {
+            font-size: 16px;
+        }
+    }
 }
 
 .footer {
@@ -757,6 +1024,18 @@ body {
             path {
                 fill: $mainTextColor;
             }
+        }
+    }
+
+    @media screen and (max-width: 1276px) {
+        &__content {
+            padding: 2vh 5vw;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        &__button {
+            gap: 1.2vw;
         }
     }
 }
