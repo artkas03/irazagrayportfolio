@@ -9,6 +9,11 @@ const arrayOfGanredButtons = document.querySelectorAll("#galleryGanreButton");
 
 const orderButtons = document.querySelectorAll(".orderbutton");
 
+const sidemenuOpener = document.querySelector("#sidemenuOpen");
+const sidemenuCloser = document.querySelector("#sidemenuClose");
+const sidemenu = document.querySelector("#sidemenu");
+const sidemenuButtons = sidemenu.querySelectorAll("#sidebarScrollBtn");
+
 const heightBlockPosition = [];
 
 function getBlockPosotions() {
@@ -23,6 +28,26 @@ function getBlockPosotions() {
     });
 }
 
+function openSidebar() {
+    sidemenu.style.right = 0;
+    document.querySelector("body").style.overflow = "hidden";
+    document.querySelector("#sidemenuOpen").style.right = -14 + "px";
+}
+
+function closeSidebar() {
+    sidemenu.style.right = 100 + "%";
+    document.querySelector("body").style.overflow = "auto";
+    document.querySelector("#sidemenuOpen").style.right = 14 + "px";
+}
+
+sidemenuOpener.addEventListener("click", () => {
+    openSidebar();
+});
+
+sidemenuCloser.addEventListener("click", () => {
+    closeSidebar();
+});
+
 orderButtons.forEach((button) => {
     button.addEventListener("click", () => {
         console.log(button);
@@ -36,6 +61,17 @@ navigationButtons.forEach((button, index) => {
             left: 0,
             behavior: "smooth",
         });
+    });
+});
+
+sidemenuButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+        window.scrollTo({
+            top: heightBlockPosition[index],
+            left: 0,
+            behavior: "smooth",
+        });
+        closeSidebar();
     });
 });
 
