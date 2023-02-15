@@ -42,10 +42,8 @@ select {
 
 @media (prefers-reduced-motion: reduce) {
   * {
-    -webkit-animation-duration: 0.01ms !important;
-            animation-duration: 0.01ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-            animation-iteration-count: 1 !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
@@ -517,7 +515,7 @@ body {
   grid-row-end: 6;
 }
 .collage__item5 {
-  background: url("../img/headerphoto1.webp");
+  background: url("../img/headerphoto1HD.webp");
   background-position: center;
   background-size: cover;
   grid-column-start: 1;
@@ -553,7 +551,7 @@ body {
   grid-row-end: 9;
 }
 .collage__item9 {
-  background: url("../img/headerphoto1.webp");
+  background: url("../img/headerphoto1HD.webp");
   background-position: center;
   background-size: cover;
   grid-column-start: 4;
@@ -627,14 +625,6 @@ body {
   transition: all 0.3s ease;
   width: 100%;
 }
-@-webkit-keyframes activeButton {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0;
-  }
-}
 @keyframes activeButton {
   from {
     width: 100%;
@@ -678,18 +668,9 @@ body {
   height: 100%;
 }
 .portfolio .activeganre {
-  -webkit-animation: appearAnim 1s ease;
-          animation: appearAnim 1s ease;
+  animation: appearAnim 1s ease;
   display: flex;
   gap: 2vw;
-}
-@-webkit-keyframes appearAnim {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 @keyframes appearAnim {
   from {
@@ -866,6 +847,7 @@ body {
 .video__item img {
   transform: translateY(-20%);
   height: 100%;
+  width: 100%;
 }
 .video__title {
   position: absolute;
@@ -906,13 +888,12 @@ body {
 }
 .price__title {
   margin: 0 auto;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  border-bottom: 2px solid #1f1d36;
+  border-left: 2px solid #1f1d36;
   font-family: "Cormorant Garamond", serif;
   font-size: 3vw;
-  padding-bottom: 1vh;
+  padding-left: 0.8vw;
 }
 .price__cards {
   display: flex;
@@ -948,7 +929,6 @@ body {
 }
 .price__cardcontent {
   max-width: 72%;
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   display: flex;
@@ -968,6 +948,7 @@ body {
   line-height: 32px;
   letter-spacing: 0.08em;
   color: #3f3351;
+  min-height: 40vh;
   height: 100%;
   padding-bottom: 4vh;
 }
@@ -1041,6 +1022,9 @@ body {
   .price__content {
     padding: 0 3vw;
   }
+  .price__subtext {
+    line-height: 26px;
+  }
 }
 @media (max-width: 1024px) {
   .price__title {
@@ -1051,7 +1035,7 @@ body {
   }
   .price__subtext {
     font-size: 1.2vw;
-    line-height: 30px;
+    line-height: 24px;
   }
   .price__price {
     font-size: 20px;

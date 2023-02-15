@@ -598,7 +598,7 @@ body {
     }
 
     &__item5 {
-        background: url("../img/headerphoto1.webp");
+        background: url("../img/headerphoto1HD.webp");
         background-position: center;
         background-size: cover;
         grid-column-start: 1;
@@ -638,7 +638,7 @@ body {
     }
 
     &__item9 {
-        background: url("../img/headerphoto1.webp");
+        background: url("../img/headerphoto1HD.webp");
         background-position: center;
         background-size: cover;
         grid-column-start: 4;
@@ -1008,6 +1008,7 @@ body {
         img {
             transform: translateY(-20%);
             height: 100%;
+            width: 100%;
         }
     }
 
@@ -1058,10 +1059,10 @@ body {
     &__title {
         margin: 0 auto;
         width: fit-content;
-        border-bottom: 2px solid $mainTextColor;
+        border-left: 2px solid $mainTextColor;
         font-family: $mainTextFont;
         font-size: 3vw;
-        padding-bottom: 1vh;
+        padding-left: 0.8vw;
     }
 
     &__cards {
@@ -1125,6 +1126,7 @@ body {
         line-height: 32px;
         letter-spacing: 0.08em;
         color: #3f3351;
+        min-height: 40vh;
         height: 100%;
         padding-bottom: 4vh;
     }
@@ -1212,6 +1214,10 @@ body {
         &__content {
             padding: 0 3vw;
         }
+
+        &__subtext {
+            line-height: 26px;
+        }
     }
 
     @media (max-width: 1024px) {
@@ -1225,7 +1231,7 @@ body {
 
         &__subtext {
             font-size: 1.2vw;
-            line-height: 30px;
+            line-height: 24px;
         }
 
         &__price {
