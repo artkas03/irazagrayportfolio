@@ -909,6 +909,10 @@ body {
   flex-direction: row-reverse;
   text-align: right;
 }
+.price__card:nth-child(2n) .price__header {
+  flex-direction: row-reverse;
+  padding-right: 0;
+}
 .price__card:nth-child(2n) .price__footer {
   flex-direction: row-reverse;
 }
@@ -937,20 +941,54 @@ body {
   border-radius: 0 1vw 1vw 0;
   padding: 2.5vh;
 }
+.price__header {
+  display: flex;
+  align-items: center;
+  padding: 0 2vw 2vh 0;
+  justify-content: space-between;
+}
 .price__subtitle {
   font-family: "Cormorant Garamond", serif;
   font-size: 2vw;
-  padding-bottom: 2vh;
+}
+.price__timetoggle {
+  padding: 0;
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  color: #1f1d36;
+  font-size: calc(1.2vw + 1.2vh);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+.price__timetoggle span {
+  cursor: pointer;
+}
+.price__timetoggle span:hover {
+  color: white;
+  text-shadow: 0.5px 0.5px 4px #1f1d36, 3px 2px 10px #1f1d36;
+  transition: all 0.3s ease;
+}
+.price .activetime {
+  transition: all 0.3s ease;
+  color: white;
+  text-shadow: 1px 1px 2px #1f1d36, 1px 1px 5px #1f1d36;
 }
 .price__subtext {
   font-size: 1.1vw;
   font-family: "Bitter", serif;
   line-height: 32px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: #3f3351;
   min-height: 40vh;
   height: 100%;
   padding-bottom: 4vh;
+  display: none;
+}
+.price__subtext span {
+  font-style: italic;
+}
+.price .activetext {
+  display: block;
 }
 .price__footer {
   display: flex;
@@ -985,6 +1023,12 @@ body {
   line-height: 32px;
   letter-spacing: 0.08em;
   font-size: 1.5vw;
+}
+.price__price span {
+  display: none;
+}
+.price .activeprice {
+  display: block;
 }
 @media (min-width: 1575px) {
   .price__title {
@@ -1058,6 +1102,12 @@ body {
   .price__title {
     font-size: 4.5vw;
   }
+  .price__header {
+    padding-bottom: 3vh;
+  }
+  .price__timetoggle {
+    font-size: calc(1.5vw + 1.5vh);
+  }
   .price__subtitle {
     font-size: 3.5vw;
   }
@@ -1084,11 +1134,17 @@ body {
     flex-direction: unset;
     text-align: left;
   }
+  .price__card:nth-child(2n) .price__header {
+    flex-direction: unset;
+  }
   .price__card:nth-child(2n) .price__footer {
     flex-direction: unset;
   }
   .price__card:nth-child(2n) .price__image {
     border-radius: 1vw 1vw 0 0;
+  }
+  .price__timetoggle {
+    font-size: calc(1.8vw + 1.8vh);
   }
   .price__title {
     font-size: 6vw;

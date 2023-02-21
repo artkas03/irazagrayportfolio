@@ -14,6 +14,36 @@ const sidemenuCloser = document.querySelector("#sidemenuClose");
 const sidemenu = document.querySelector("#sidemenu");
 const sidemenuButtons = sidemenu.querySelectorAll("#sidebarScrollBtn");
 
+const priceToggle = document.querySelectorAll("#timetogglable");
+
+priceToggle.forEach((card) => {
+    card.querySelector(".price__timetoggle").addEventListener("click", () => {
+        card.querySelectorAll("#time").forEach((text) => {
+            if (text.classList.contains("activetime")) {
+                text.classList.remove("activetime");
+            } else {
+                text.classList.add("activetime");
+            }
+        });
+
+        card.querySelectorAll(".price__subtext").forEach((text) => {
+            if (text.classList.contains("activetext")) {
+                text.classList.remove("activetext");
+            } else {
+                text.classList.add("activetext");
+            }
+        });
+
+        card.querySelectorAll("#price").forEach((price) => {
+            if (price.classList.contains("activeprice")) {
+                price.classList.remove("activeprice");
+            } else {
+                price.classList.add("activeprice");
+            }
+        });
+    });
+});
+
 const heightBlockPosition = [];
 
 function getBlockPosotions() {
