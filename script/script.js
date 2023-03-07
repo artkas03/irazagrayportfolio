@@ -16,6 +16,10 @@ const sidemenuButtons = sidemenu.querySelectorAll("#sidebarScrollBtn");
 
 const priceToggle = document.querySelectorAll("#timetogglable");
 
+const photoblock = document.querySelectorAll("#photoblock");
+
+let isActive = false;
+
 priceToggle.forEach((card) => {
     card.querySelector(".price__timetoggle").addEventListener("click", () => {
         card.querySelectorAll("#time").forEach((text) => {
@@ -147,5 +151,82 @@ arrayOfGanredButtons.forEach((button, index = 0) => {
                     });
             }
         });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    photoblock.forEach((element) => {
+        let width = element.offsetWidth;
+        element
+            .querySelector(".comparison__before")
+            .querySelector("img").style.width = `${width}px`;
+    });
+});
+
+addEventListener("resize", () => {
+    photoblock.forEach((element) => {
+        let width = element.offsetWidth;
+        element
+            .querySelector(".comparison__before")
+            .querySelector("img").style.width = `${width}px`;
+    });
+});
+
+photoblock.forEach((block) => {
+    const border = block.querySelector("#border");
+    const [beforeImage, afterImage] = block.querySelectorAll(".item");
+
+    border.addEventListener("mousedown", () => {
+        isActive = true;
+    });
+    border.addEventListener("mouseup", () => {
+        isActive = false;
+    });
+    block.addEventListener("mouseleave", () => {
+        isActive = false;
+    });
+
+    border.addEventListener("touchstart", () => {
+        isActive = true;
+    });
+    border.addEventListener("touchend", () => {
+        isActive = false;
+    });
+    block.addEventListener("touchcancel", () => {
+        isActive = false;
+    });
+
+    block.addEventListener("mousemove", (mouse) => {
+        if (!isActive) {
+            return;
+        }
+
+        let curPosition = mouse.pageX;
+        curPosition -= block.getBoundingClientRect().left;
+        let position = Math.max(0, Math.min(curPosition, block.offsetWidth));
+        beforeImage.style.width = `${position}px`;
+        border.style.left = `${position}px`;
+
+        mouse.stopPropagation();
+        mouse.preventDefault();
+    });
+
+    block.addEventListener("touchmove", (touch) => {
+        if (!isActive) {
+            return;
+        }
+
+        let iTouch;
+        for (let i = 0; i < touch.changedTouches.length; i++) {
+            iTouch = touch.changedTouches[i].pageX;
+        }
+
+        iTouch -= block.getBoundingClientRect().left;
+        let position = Math.max(0, Math.min(iTouch, block.offsetWidth));
+        beforeImage.style.width = `${position}px`;
+        border.style.left = `${position}px`;
+
+        touch.stopPropagation();
+        touch.preventDefault();
     });
 });
